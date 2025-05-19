@@ -1,0 +1,13 @@
+account_id,name,official_name,type,subtype,holder_category,current_balance,available_balance,iso_currency_code
+NEVJGP7JoaHQ5qRlB9D7CEqrWxgWKptXw6xDR,Plaid Checking,Plaid Gold Standard 0% Interest Checking,Depository,Checking,Personal,110.0,100.0,USD
+5lzkr54kvyUzEq9bVBvjuNV3gxrgLGFGmKgPB,Plaid Saving,Plaid Silver Standard 0.1% Interest Saving,Depository,Savings,Personal,210.0,200.0,USD
+JpdJ8V4JMBIL5Gbe67oauM9vaxRaWpCQP6ZER,Plaid CD,Plaid Bronze Standard 0.2% Interest CD,Depository,Cd,Unknown,1000.0,0.0,USD
+klXvGAxv7zUB1ynQmVNjCylnMxkM8EcJv6wBN,Plaid Credit Card,Plaid Diamond 12.5% APR Interest Credit Card,Credit,Credit Card,Unknown,410.0,0.0,USD
+lkg6lA96eBF6lXrAqMPZtEVQ7pJ7bMtaxoJyl,Plaid Money Market,Plaid Platinum Standard 1.85% Interest Money Market,Depository,Money Market,Unknown,43200.0,43200.0,USD
+q35vBAbvL4fBn1pabgrlCN18Ly7LA6F63roaZ,Plaid IRA,Unknown Account,Investment,Ira,Unknown,320.76,0.0,USD
+KowJEP4J13sX54wQkrD9cMDRXvnXmkCEQpnPa,Plaid 401k,Unknown Account,Investment,401K,Unknown,23631.9805,0.0,USD
+rxXv3wgvpNIk3wJN98zWuaE4BLDB6zfdzJoxg,Plaid Student Loan,Unknown Account,Loan,Student,Personal,65262.0,0.0,USD
+zeBv7zavkosakKlpDBPGuaAvDNyDkjf3nNq9L,Plaid Mortgage,Unknown Account,Loan,Mortgage,Unknown,56302.06,0.0,USD
+BjNJQkDJ4yHoE78xZ9PXuDNzQrWQKECzlMZPj,Plaid HSA,Plaid Cares Health Savings Account,Depository,Hsa,Unknown,6009.0,6009.0,USD
+3RVMqJGMykTgRQbJE5kpfzwWRKyRMVfmxlPpE,Plaid Cash Management,Plaid Growth Cash Management,Depository,Cash Management,Unknown,12060.0,12060.0,USD
+xjLvPKgvAkHrPEWpqb4kCJelvjpvV6cyb4NoK,Plaid Business Credit Card,Plaid Platinum Small Business Credit Card,Credit,Credit Card,Business,5020.0,4980.0,USD
