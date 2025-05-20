@@ -12,7 +12,7 @@ The pipeline processes the data using Azure Functions and Python, stores raw and
 
 This diagram illustrates the full end-to-end flow of the pipeline from Plaid to Azure Synapse Analytics.
 
-![Architecture Diagram](plaid_pipeline.png)
+![Architecture Diagram](images/plaid_pipeline.png)
 
 ---
 
