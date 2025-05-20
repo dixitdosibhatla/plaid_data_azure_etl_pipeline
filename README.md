@@ -69,9 +69,8 @@ This diagram illustrates the full end-to-end flow of the pipeline from Plaid to 
 4. Set up Blob Storage containers.
 5. Configure Azure Synapse Analytics.
 
----
 
-## Environment Configuration
+#### Environment Configuration
 
 The following environment variables must be set for the Azure Functions in `local.settings.json` file:
 
@@ -81,9 +80,8 @@ The following environment variables must be set for the Azure Functions in `loca
 - `EXTRACT_CONTAINER_NAME` — Container name for raw data (default: `raw-data`).
 - `OUTPUT_CONTAINER_NAME` — Container name for transformed data (default: `transformed-data`).
 
----
 
-## Usage
+#### Usage
 - Trigger the extraction function manually or wait for the scheduled trigger.
 - Monitor Azure Functions logs for processing status.
 - Verify data in Blob Storage and Synapse Analytics.
