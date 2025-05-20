@@ -35,19 +35,39 @@ This diagram illustrates the full end-to-end flow of the pipeline from Plaid to 
 - An Azure Function triggers monthly (on the 1st day at midnight) to extract transactions from Plaid’s Sandbox API.
 - It dynamically computes the previous month’s date range.
 - The function obtains a sandbox public token, exchanges it for an access token, and requests transaction data for the specified date range.
-- Raw JSON data is saved into **ADLS Gen2** under `raw-data/to_process/` with a timestamped filename.
+- Raw JSON data is saved into **ADLS Gen2** under `raw-data/to_process/` with filenames that represent a date range, following the pattern: plaid_raw_YYYYMMDD_YYYYMMDD.json.
 
 ### 2. Transformation and Loading
 
 - A second Azure Function is triggered automatically when new blobs appear in `raw-data/to_process/`.
 - It reads all new JSON files, extracts relevant transaction and account data, and performs data cleansing and normalization using Pandas.
-- Transformed data is saved as CSV files into ADLS Gen2 containers `transactions_data/` and `accounts_data/` within the `transformed-data` container.
+- Transformed data is saved as CSV files into ADLS Gen2 folders `transactions_data/` and `accounts_data/` within the `transformed-data` container.
 - Processed raw JSON files are moved from `to_process/` to `processed/` folder to avoid re-processing.
 
 ### 3. Querying with Azure Synapse Analytics
 
 - The `transformed-data` ADLS Gen2 container is linked as an **external data source** within Azure Synapse Analytics.
 - Using `OPENROWSET` SQL commands, Synapse directly queries the CSV files without explicit ingestion or data movement.
+
+---
+
+## Key Features and Benefits
+
+- Fully serverless architecture with Azure Functions, reducing infrastructure management.
+- Automated scheduling and event-driven processing.
+- Modular code design allowing easy extension for additional products or integrations.
+- Secure handling of credentials via environment variables.
+- Efficient data transformation using Pandas ensuring clean and analytics-ready datasets.
+- Seamless querying through Azure Synapse Analytics without needing to load data into SQL pools.
+
+---
+
+## Setup Instructions
+1. Clone the repository.
+2. Configure environment variables.
+3. Deploy Azure Functions.
+4. Set up Blob Storage containers.
+5. Configure Azure Synapse Analytics.
 
 ---
 
@@ -63,15 +83,12 @@ The following environment variables must be set for the Azure Functions in `loca
 
 ---
 
-## Key Features and Benefits
+## Usage
+- Trigger the extraction function manually or wait for the scheduled trigger.
+- Monitor Azure Functions logs for processing status.
+- Verify data in Blob Storage and Synapse Analytics.
 
-- Fully serverless architecture with Azure Functions, reducing infrastructure management.
-- Automated scheduling and event-driven processing.
-- Modular code design allowing easy extension for additional products or integrations.
-- Secure handling of credentials via environment variables.
-- Efficient data transformation using Pandas ensuring clean and analytics-ready datasets.
-- Seamless querying through Azure Synapse Analytics without needing to load data into SQL pools.
-
+---
   
 ## References
 
